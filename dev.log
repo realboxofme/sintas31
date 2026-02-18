@@ -1,0 +1,333 @@
+▲ Next.js 16.1.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.18.33:3000
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 1033ms
+ GET / 200 in 705ms (compile: 359ms, render: 346ms)
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive` FROM `sintas`.`User` WHERE (`sintas`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/auth/me 200 in 192ms (compile: 113ms, render: 78ms)
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE 1=1 ORDER BY `sintas`.`SuratKeluar`.`createdAt` DESC
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE `sintas`.`KategoriSurat`.`id` IN (?)
+prisma:query SELECT `sintas`.`Disposisi`.`id`, `sintas`.`Disposisi`.`suratMasukId`, `sintas`.`Disposisi`.`dariUserId`, `sintas`.`Disposisi`.`keUserId`, `sintas`.`Disposisi`.`tujuan`, `sintas`.`Disposisi`.`instruksi`, `sintas`.`Disposisi`.`status`, `sintas`.`Disposisi`.`tenggatWaktu`, `sintas`.`Disposisi`.`catatan`, `sintas`.`Disposisi`.`prioritas`, `sintas`.`Disposisi`.`createdAt`, `sintas`.`Disposisi`.`updatedAt` FROM `sintas`.`Disposisi` WHERE 1=1 ORDER BY `sintas`.`Disposisi`.`createdAt` DESC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE `sintas`.`SuratKeluar`.`status` = ?) AS `sub`
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`noSurat`, `sintas`.`SuratMasuk`.`tanggalSurat`, `sintas`.`SuratMasuk`.`tanggalTerima`, `sintas`.`SuratMasuk`.`pengirim`, `sintas`.`SuratMasuk`.`perihal`, `sintas`.`SuratMasuk`.`lampiran`, `sintas`.`SuratMasuk`.`sifat`, `sintas`.`SuratMasuk`.`status`, `sintas`.`SuratMasuk`.`keterangan`, `sintas`.`SuratMasuk`.`fileUrl`, `sintas`.`SuratMasuk`.`fileName`, `sintas`.`SuratMasuk`.`fileSize`, `sintas`.`SuratMasuk`.`fileType`, `sintas`.`SuratMasuk`.`kategoriId`, `sintas`.`SuratMasuk`.`createdAt`, `sintas`.`SuratMasuk`.`updatedAt` FROM `sintas`.`SuratMasuk` WHERE 1=1 ORDER BY `sintas`.`SuratMasuk`.`createdAt` DESC
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE 1=1 ORDER BY `sintas`.`KategoriSurat`.`nama` ASC
+ GET /api/surat-keluar 200 in 480ms (compile: 352ms, render: 128ms)
+ GET /api/disposisi 200 in 533ms (compile: 370ms, render: 163ms)
+ GET /api/surat-masuk 200 in 602ms (compile: 442ms, render: 160ms)
+ GET /api/stats 200 in 666ms (compile: 420ms, render: 246ms)
+ GET /api/kategori 200 in 723ms (compile: 460ms, render: 263ms)
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive` FROM `sintas`.`User` WHERE (`sintas`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive`, `sintas`.`User`.`createdAt`, `sintas`.`User`.`updatedAt` FROM `sintas`.`User` WHERE 1=1 ORDER BY `sintas`.`User`.`createdAt` DESC
+ GET /api/users 200 in 822ms (compile: 393ms, render: 429ms)
+prisma:query SELECT `sintas`.`TemplateSurat`.`id`, `sintas`.`TemplateSurat`.`nama`, `sintas`.`TemplateSurat`.`kode`, `sintas`.`TemplateSurat`.`konten`, `sintas`.`TemplateSurat`.`kategoriId`, `sintas`.`TemplateSurat`.`isActive`, `sintas`.`TemplateSurat`.`createdAt`, `sintas`.`TemplateSurat`.`updatedAt` FROM `sintas`.`TemplateSurat` WHERE 1=1 ORDER BY `sintas`.`TemplateSurat`.`nama` ASC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE 1=1) AS `sub`
+prisma:query SELECT `sintas`.`Arsip`.`id`, `sintas`.`Arsip`.`noArsip`, `sintas`.`Arsip`.`tanggalArsip`, `sintas`.`Arsip`.`keterangan`, `sintas`.`Arsip`.`lokasi`, `sintas`.`Arsip`.`jenis`, `sintas`.`Arsip`.`fileUrl`, `sintas`.`Arsip`.`fileName`, `sintas`.`Arsip`.`fileSize`, `sintas`.`Arsip`.`fileType`, `sintas`.`Arsip`.`suratMasukId`, `sintas`.`Arsip`.`suratKeluarId`, `sintas`.`Arsip`.`createdAt`, `sintas`.`Arsip`.`updatedAt` FROM `sintas`.`Arsip` WHERE 1=1 ORDER BY `sintas`.`Arsip`.`tanggalArsip` DESC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE 1=1) AS `sub`
+ GET /api/arsip 200 in 255ms (compile: 242ms, render: 13ms)
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`tanggalTerima` FROM `sintas`.`SuratMasuk` WHERE (`sintas`.`SuratMasuk`.`tanggalTerima` >= ? AND `sintas`.`SuratMasuk`.`tanggalTerima` <= ?)
+ GET /api/template 200 in 313ms (compile: 187ms, render: 126ms)
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`tanggalSurat` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`tanggalSurat` >= ? AND `sintas`.`SuratKeluar`.`tanggalSurat` <= ?)
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`kategoriId` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`kategoriId`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`kategoriId` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`kategoriId`
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE 1=1
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`status` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`status`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`status` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`status`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`Disposisi`.`status` FROM `sintas`.`Disposisi` WHERE 1=1 GROUP BY `sintas`.`Disposisi`.`status`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`pengirim` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`pengirim` ORDER BY COUNT(`sintas`.`SuratMasuk`.`pengirim`) DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`tujuan` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`tujuan` ORDER BY COUNT(`sintas`.`SuratKeluar`.`tujuan`) DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`sifat` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`sifat`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`sifat` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`sifat`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`Arsip`.`id` FROM `sintas`.`Arsip` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`Disposisi`.`id` FROM `sintas`.`Disposisi` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`Disposisi`.`prioritas` FROM `sintas`.`Disposisi` WHERE 1=1 GROUP BY `sintas`.`Disposisi`.`prioritas`
+ GET /api/laporan/statistik 200 in 412ms (compile: 214ms, render: 198ms)
+ GET / 200 in 63ms (compile: 5ms, render: 59ms)
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive` FROM `sintas`.`User` WHERE (`sintas`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/auth/me 200 in 18ms (compile: 3ms, render: 15ms)
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`noSurat`, `sintas`.`SuratMasuk`.`tanggalSurat`, `sintas`.`SuratMasuk`.`tanggalTerima`, `sintas`.`SuratMasuk`.`pengirim`, `sintas`.`SuratMasuk`.`perihal`, `sintas`.`SuratMasuk`.`lampiran`, `sintas`.`SuratMasuk`.`sifat`, `sintas`.`SuratMasuk`.`status`, `sintas`.`SuratMasuk`.`keterangan`, `sintas`.`SuratMasuk`.`fileUrl`, `sintas`.`SuratMasuk`.`fileName`, `sintas`.`SuratMasuk`.`fileSize`, `sintas`.`SuratMasuk`.`fileType`, `sintas`.`SuratMasuk`.`kategoriId`, `sintas`.`SuratMasuk`.`createdAt`, `sintas`.`SuratMasuk`.`updatedAt` FROM `sintas`.`SuratMasuk` WHERE 1=1 ORDER BY `sintas`.`SuratMasuk`.`createdAt` DESC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE 1=1) AS `sub`
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE 1=1 ORDER BY `sintas`.`SuratKeluar`.`createdAt` DESC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE `sintas`.`SuratKeluar`.`status` = ?) AS `sub`
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE `sintas`.`KategoriSurat`.`id` IN (?)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT `sintas`.`Disposisi`.`id`, `sintas`.`Disposisi`.`suratMasukId`, `sintas`.`Disposisi`.`dariUserId`, `sintas`.`Disposisi`.`keUserId`, `sintas`.`Disposisi`.`tujuan`, `sintas`.`Disposisi`.`instruksi`, `sintas`.`Disposisi`.`status`, `sintas`.`Disposisi`.`tenggatWaktu`, `sintas`.`Disposisi`.`catatan`, `sintas`.`Disposisi`.`prioritas`, `sintas`.`Disposisi`.`createdAt`, `sintas`.`Disposisi`.`updatedAt` FROM `sintas`.`Disposisi` WHERE 1=1 ORDER BY `sintas`.`Disposisi`.`createdAt` DESC
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE 1=1 ORDER BY `sintas`.`KategoriSurat`.`nama` ASC
+ GET /api/disposisi 200 in 54ms (compile: 28ms, render: 27ms)
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive` FROM `sintas`.`User` WHERE (`sintas`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/stats 200 in 147ms (compile: 12ms, render: 135ms)
+ GET /api/surat-masuk 200 in 225ms (compile: 6ms, render: 219ms)
+ GET /api/surat-keluar 200 in 290ms (compile: 18ms, render: 272ms)
+ GET /api/kategori 200 in 353ms (compile: 33ms, render: 320ms)
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive`, `sintas`.`User`.`createdAt`, `sintas`.`User`.`updatedAt` FROM `sintas`.`User` WHERE 1=1 ORDER BY `sintas`.`User`.`createdAt` DESC
+ GET /api/users 200 in 433ms (compile: 24ms, render: 409ms)
+prisma:query SELECT `sintas`.`Arsip`.`id`, `sintas`.`Arsip`.`noArsip`, `sintas`.`Arsip`.`tanggalArsip`, `sintas`.`Arsip`.`keterangan`, `sintas`.`Arsip`.`lokasi`, `sintas`.`Arsip`.`jenis`, `sintas`.`Arsip`.`fileUrl`, `sintas`.`Arsip`.`fileName`, `sintas`.`Arsip`.`fileSize`, `sintas`.`Arsip`.`fileType`, `sintas`.`Arsip`.`suratMasukId`, `sintas`.`Arsip`.`suratKeluarId`, `sintas`.`Arsip`.`createdAt`, `sintas`.`Arsip`.`updatedAt` FROM `sintas`.`Arsip` WHERE 1=1 ORDER BY `sintas`.`Arsip`.`tanggalArsip` DESC
+prisma:query SELECT `sintas`.`TemplateSurat`.`id`, `sintas`.`TemplateSurat`.`nama`, `sintas`.`TemplateSurat`.`kode`, `sintas`.`TemplateSurat`.`konten`, `sintas`.`TemplateSurat`.`kategoriId`, `sintas`.`TemplateSurat`.`isActive`, `sintas`.`TemplateSurat`.`createdAt`, `sintas`.`TemplateSurat`.`updatedAt` FROM `sintas`.`TemplateSurat` WHERE 1=1 ORDER BY `sintas`.`TemplateSurat`.`nama` ASC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE 1=1) AS `sub`
+ GET /api/arsip 200 in 88ms (compile: 73ms, render: 15ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE 1=1) AS `sub`
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`tanggalTerima` FROM `sintas`.`SuratMasuk` WHERE (`sintas`.`SuratMasuk`.`tanggalTerima` >= ? AND `sintas`.`SuratMasuk`.`tanggalTerima` <= ?)
+ GET /api/template 200 in 172ms (compile: 75ms, render: 97ms)
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`tanggalSurat` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`tanggalSurat` >= ? AND `sintas`.`SuratKeluar`.`tanggalSurat` <= ?)
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`kategoriId` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`kategoriId`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`kategoriId` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`kategoriId`
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE 1=1
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`status` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`status`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`status` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`status`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`Disposisi`.`status` FROM `sintas`.`Disposisi` WHERE 1=1 GROUP BY `sintas`.`Disposisi`.`status`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`pengirim` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`pengirim` ORDER BY COUNT(`sintas`.`SuratMasuk`.`pengirim`) DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`tujuan` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`tujuan` ORDER BY COUNT(`sintas`.`SuratKeluar`.`tujuan`) DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`sifat` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`sifat`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`sifat` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`sifat`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`Arsip`.`id` FROM `sintas`.`Arsip` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`Disposisi`.`id` FROM `sintas`.`Disposisi` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`Disposisi`.`prioritas` FROM `sintas`.`Disposisi` WHERE 1=1 GROUP BY `sintas`.`Disposisi`.`prioritas`
+ GET /api/laporan/statistik 200 in 304ms (compile: 78ms, render: 226ms)
+prisma:query SELECT 1
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query BEGIN
+prisma:query SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query UPDATE `sintas`.`SuratKeluar` SET `noSurat` = ?, `tanggalSurat` = ?, `tujuan` = ?, `perihal` = ?, `lampiran` = ?, `sifat` = ?, `status` = ?, `keterangan` = ?, `kategoriId` = ?, `isiSurat` = ?, `tempatTtd` = ?, `jabatanTtd` = ?, `namaTtd` = ?, `nipTtd` = ?, `tembusan` = ?, `updatedAt` = ? WHERE (`sintas`.`SuratKeluar`.`id` IN (?) AND (`sintas`.`SuratKeluar`.`id` = ? AND 1=1))
+prisma:query ROLLBACK
+prisma:error 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update()` invocation in
+/home/tes/Downloads/sintas1/.next/dev/server/chunks/[root-of-the-server]__25e28923._.js:150:168
+
+  147         });
+  148     }
+  149 }
+→ 150 const suratKeluar = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update(
+The provided value for the column is too long for the column's type. Column: isiSurat
+Error updating surat keluar: Error [PrismaClientKnownRequestError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update()` invocation in
+/home/tes/Downloads/sintas1/.next/dev/server/chunks/[root-of-the-server]__25e28923._.js:150:168
+
+  147         });
+  148     }
+  149 }
+→ 150 const suratKeluar = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update(
+The provided value for the column is too long for the column's type. Column: isiSurat
+    at <unknown> (file:/home/tes/Downloads/sintas1/src/app/api/surat-keluar/%5Bid%5D/route.ts:95:46)
+    at processTicksAndRejections (null)
+  93 |     }
+  94 |
+> 95 |     const suratKeluar = await db.suratKeluar.update({
+     |                                              ^
+  96 |       where: { id },
+  97 |       data: {
+  98 |         noSurat, {
+  code: 'P2000',
+  meta: [Object],
+  clientVersion: '6.19.2'
+}
+ PUT /api/surat-keluar/cmlrm4yyd0005sasd23ibaamp 500 in 994ms (compile: 904ms, render: 90ms)
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query BEGIN
+prisma:query SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query UPDATE `sintas`.`SuratKeluar` SET `noSurat` = ?, `tanggalSurat` = ?, `tujuan` = ?, `perihal` = ?, `lampiran` = ?, `sifat` = ?, `status` = ?, `keterangan` = ?, `kategoriId` = ?, `isiSurat` = ?, `tempatTtd` = ?, `jabatanTtd` = ?, `namaTtd` = ?, `nipTtd` = ?, `tembusan` = ?, `updatedAt` = ? WHERE (`sintas`.`SuratKeluar`.`id` IN (?) AND (`sintas`.`SuratKeluar`.`id` = ? AND 1=1))
+prisma:query ROLLBACK
+prisma:error 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update()` invocation in
+/home/tes/Downloads/sintas1/.next/dev/server/chunks/[root-of-the-server]__25e28923._.js:150:168
+
+  147         });
+  148     }
+  149 }
+→ 150 const suratKeluar = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update(
+The provided value for the column is too long for the column's type. Column: isiSurat
+Error updating surat keluar: Error [PrismaClientKnownRequestError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update()` invocation in
+/home/tes/Downloads/sintas1/.next/dev/server/chunks/[root-of-the-server]__25e28923._.js:150:168
+
+  147         });
+  148     }
+  149 }
+→ 150 const suratKeluar = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update(
+The provided value for the column is too long for the column's type. Column: isiSurat
+    at <unknown> (file:/home/tes/Downloads/sintas1/src/app/api/surat-keluar/%5Bid%5D/route.ts:95:46)
+    at processTicksAndRejections (null)
+  93 |     }
+  94 |
+> 95 |     const suratKeluar = await db.suratKeluar.update({
+     |                                              ^
+  96 |       where: { id },
+  97 |       data: {
+  98 |         noSurat, {
+  code: 'P2000',
+  meta: [Object],
+  clientVersion: '6.19.2'
+}
+ PUT /api/surat-keluar/cmlrm4yyd0005sasd23ibaamp 500 in 86ms (compile: 16ms, render: 70ms)
+prisma:query SELECT 1
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query BEGIN
+prisma:query SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query UPDATE `sintas`.`SuratKeluar` SET `noSurat` = ?, `tanggalSurat` = ?, `tujuan` = ?, `perihal` = ?, `lampiran` = ?, `sifat` = ?, `status` = ?, `keterangan` = ?, `kategoriId` = ?, `isiSurat` = ?, `tempatTtd` = ?, `jabatanTtd` = ?, `namaTtd` = ?, `nipTtd` = ?, `tembusan` = ?, `updatedAt` = ? WHERE (`sintas`.`SuratKeluar`.`id` IN (?) AND (`sintas`.`SuratKeluar`.`id` = ? AND 1=1))
+prisma:query ROLLBACK
+prisma:error 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update()` invocation in
+/home/tes/Downloads/sintas1/.next/dev/server/chunks/[root-of-the-server]__25e28923._.js:150:168
+
+  147         });
+  148     }
+  149 }
+→ 150 const suratKeluar = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update(
+The provided value for the column is too long for the column's type. Column: isiSurat
+Error updating surat keluar: Error [PrismaClientKnownRequestError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update()` invocation in
+/home/tes/Downloads/sintas1/.next/dev/server/chunks/[root-of-the-server]__25e28923._.js:150:168
+
+  147         });
+  148     }
+  149 }
+→ 150 const suratKeluar = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update(
+The provided value for the column is too long for the column's type. Column: isiSurat
+    at <unknown> (file:/home/tes/Downloads/sintas1/src/app/api/surat-keluar/%5Bid%5D/route.ts:95:46)
+    at processTicksAndRejections (null)
+  93 |     }
+  94 |
+> 95 |     const suratKeluar = await db.suratKeluar.update({
+     |                                              ^
+  96 |       where: { id },
+  97 |       data: {
+  98 |         noSurat, {
+  code: 'P2000',
+  meta: [Object],
+  clientVersion: '6.19.2'
+}
+ PUT /api/surat-keluar/cmlrm4yyd0005sasd23ibaamp 500 in 52ms (compile: 7ms, render: 45ms)
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query BEGIN
+prisma:query SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query UPDATE `sintas`.`SuratKeluar` SET `noSurat` = ?, `tanggalSurat` = ?, `tujuan` = ?, `perihal` = ?, `lampiran` = ?, `sifat` = ?, `status` = ?, `keterangan` = ?, `kategoriId` = ?, `isiSurat` = ?, `tempatTtd` = ?, `jabatanTtd` = ?, `namaTtd` = ?, `nipTtd` = ?, `tembusan` = ?, `updatedAt` = ? WHERE (`sintas`.`SuratKeluar`.`id` IN (?) AND (`sintas`.`SuratKeluar`.`id` = ? AND 1=1))
+prisma:query ROLLBACK
+prisma:error 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update()` invocation in
+/home/tes/Downloads/sintas1/.next/dev/server/chunks/[root-of-the-server]__25e28923._.js:150:168
+
+  147         });
+  148     }
+  149 }
+→ 150 const suratKeluar = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update(
+The provided value for the column is too long for the column's type. Column: isiSurat
+Error updating surat keluar: Error [PrismaClientKnownRequestError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update()` invocation in
+/home/tes/Downloads/sintas1/.next/dev/server/chunks/[root-of-the-server]__25e28923._.js:150:168
+
+  147         });
+  148     }
+  149 }
+→ 150 const suratKeluar = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].suratKeluar.update(
+The provided value for the column is too long for the column's type. Column: isiSurat
+    at <unknown> (file:/home/tes/Downloads/sintas1/src/app/api/surat-keluar/%5Bid%5D/route.ts:95:46)
+    at processTicksAndRejections (null)
+  93 |     }
+  94 |
+> 95 |     const suratKeluar = await db.suratKeluar.update({
+     |                                              ^
+  96 |       where: { id },
+  97 |       data: {
+  98 |         noSurat, {
+  code: 'P2000',
+  meta: [Object],
+  clientVersion: '6.19.2'
+}
+ PUT /api/surat-keluar/cmlrm4yyd0005sasd23ibaamp 500 in 58ms (compile: 5ms, render: 52ms)
+ GET / 200 in 71ms (compile: 5ms, render: 67ms)
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive` FROM `sintas`.`User` WHERE (`sintas`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/auth/me 200 in 14ms (compile: 3ms, render: 11ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE 1=1) AS `sub`
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`noSurat`, `sintas`.`SuratMasuk`.`tanggalSurat`, `sintas`.`SuratMasuk`.`tanggalTerima`, `sintas`.`SuratMasuk`.`pengirim`, `sintas`.`SuratMasuk`.`perihal`, `sintas`.`SuratMasuk`.`lampiran`, `sintas`.`SuratMasuk`.`sifat`, `sintas`.`SuratMasuk`.`status`, `sintas`.`SuratMasuk`.`keterangan`, `sintas`.`SuratMasuk`.`fileUrl`, `sintas`.`SuratMasuk`.`fileName`, `sintas`.`SuratMasuk`.`fileSize`, `sintas`.`SuratMasuk`.`fileType`, `sintas`.`SuratMasuk`.`kategoriId`, `sintas`.`SuratMasuk`.`createdAt`, `sintas`.`SuratMasuk`.`updatedAt` FROM `sintas`.`SuratMasuk` WHERE 1=1 ORDER BY `sintas`.`SuratMasuk`.`createdAt` DESC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE `sintas`.`SuratKeluar`.`status` = ?) AS `sub`
+prisma:query SELECT `sintas`.`Disposisi`.`id`, `sintas`.`Disposisi`.`suratMasukId`, `sintas`.`Disposisi`.`dariUserId`, `sintas`.`Disposisi`.`keUserId`, `sintas`.`Disposisi`.`tujuan`, `sintas`.`Disposisi`.`instruksi`, `sintas`.`Disposisi`.`status`, `sintas`.`Disposisi`.`tenggatWaktu`, `sintas`.`Disposisi`.`catatan`, `sintas`.`Disposisi`.`prioritas`, `sintas`.`Disposisi`.`createdAt`, `sintas`.`Disposisi`.`updatedAt` FROM `sintas`.`Disposisi` WHERE 1=1 ORDER BY `sintas`.`Disposisi`.`createdAt` DESC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE 1=1 ORDER BY `sintas`.`SuratKeluar`.`createdAt` DESC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE `sintas`.`KategoriSurat`.`id` IN (?)
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE 1=1 ORDER BY `sintas`.`KategoriSurat`.`nama` ASC
+ GET /api/surat-masuk 200 in 50ms (compile: 12ms, render: 37ms)
+ GET /api/disposisi 200 in 135ms (compile: 16ms, render: 119ms)
+ GET /api/stats 200 in 199ms (compile: 6ms, render: 193ms)
+ GET /api/surat-keluar 200 in 270ms (compile: 19ms, render: 251ms)
+ GET /api/kategori 200 in 332ms (compile: 28ms, render: 303ms)
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive` FROM `sintas`.`User` WHERE (`sintas`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive`, `sintas`.`User`.`createdAt`, `sintas`.`User`.`updatedAt` FROM `sintas`.`User` WHERE 1=1 ORDER BY `sintas`.`User`.`createdAt` DESC
+ GET /api/users 200 in 416ms (compile: 24ms, render: 392ms)
+prisma:query SELECT `sintas`.`Arsip`.`id`, `sintas`.`Arsip`.`noArsip`, `sintas`.`Arsip`.`tanggalArsip`, `sintas`.`Arsip`.`keterangan`, `sintas`.`Arsip`.`lokasi`, `sintas`.`Arsip`.`jenis`, `sintas`.`Arsip`.`fileUrl`, `sintas`.`Arsip`.`fileName`, `sintas`.`Arsip`.`fileSize`, `sintas`.`Arsip`.`fileType`, `sintas`.`Arsip`.`suratMasukId`, `sintas`.`Arsip`.`suratKeluarId`, `sintas`.`Arsip`.`createdAt`, `sintas`.`Arsip`.`updatedAt` FROM `sintas`.`Arsip` WHERE 1=1 ORDER BY `sintas`.`Arsip`.`tanggalArsip` DESC
+prisma:query SELECT `sintas`.`TemplateSurat`.`id`, `sintas`.`TemplateSurat`.`nama`, `sintas`.`TemplateSurat`.`kode`, `sintas`.`TemplateSurat`.`konten`, `sintas`.`TemplateSurat`.`kategoriId`, `sintas`.`TemplateSurat`.`isActive`, `sintas`.`TemplateSurat`.`createdAt`, `sintas`.`TemplateSurat`.`updatedAt` FROM `sintas`.`TemplateSurat` WHERE 1=1 ORDER BY `sintas`.`TemplateSurat`.`nama` ASC
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE 1=1) AS `sub`
+ GET /api/arsip 200 in 85ms (compile: 3ms, render: 81ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE 1=1) AS `sub`
+ GET /api/template 200 in 158ms (compile: 7ms, render: 151ms)
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`tanggalTerima` FROM `sintas`.`SuratMasuk` WHERE (`sintas`.`SuratMasuk`.`tanggalTerima` >= ? AND `sintas`.`SuratMasuk`.`tanggalTerima` <= ?)
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`tanggalSurat` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`tanggalSurat` >= ? AND `sintas`.`SuratKeluar`.`tanggalSurat` <= ?)
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`kategoriId` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`kategoriId`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`kategoriId` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`kategoriId`
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE 1=1
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`status` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`status`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`status` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`status`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`Disposisi`.`status` FROM `sintas`.`Disposisi` WHERE 1=1 GROUP BY `sintas`.`Disposisi`.`status`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`pengirim` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`pengirim` ORDER BY COUNT(`sintas`.`SuratMasuk`.`pengirim`) DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`tujuan` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`tujuan` ORDER BY COUNT(`sintas`.`SuratKeluar`.`tujuan`) DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratMasuk`.`sifat` FROM `sintas`.`SuratMasuk` WHERE 1=1 GROUP BY `sintas`.`SuratMasuk`.`sifat`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`SuratKeluar`.`sifat` FROM `sintas`.`SuratKeluar` WHERE 1=1 GROUP BY `sintas`.`SuratKeluar`.`sifat`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`Arsip`.`id` FROM `sintas`.`Arsip` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`Disposisi`.`id` FROM `sintas`.`Disposisi` WHERE 1=1) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all`, `sintas`.`Disposisi`.`prioritas` FROM `sintas`.`Disposisi` WHERE 1=1 GROUP BY `sintas`.`Disposisi`.`prioritas`
+ GET /api/laporan/statistik 200 in 245ms (compile: 9ms, render: 235ms)
+prisma:query SELECT 1
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query BEGIN
+prisma:query SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE (`sintas`.`SuratKeluar`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query UPDATE `sintas`.`SuratKeluar` SET `noSurat` = ?, `tanggalSurat` = ?, `tujuan` = ?, `perihal` = ?, `lampiran` = ?, `sifat` = ?, `status` = ?, `keterangan` = ?, `kategoriId` = ?, `isiSurat` = ?, `tempatTtd` = ?, `jabatanTtd` = ?, `namaTtd` = ?, `nipTtd` = ?, `tembusan` = ?, `updatedAt` = ? WHERE (`sintas`.`SuratKeluar`.`id` IN (?) AND (`sintas`.`SuratKeluar`.`id` = ? AND 1=1))
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE `sintas`.`SuratKeluar`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE `sintas`.`KategoriSurat`.`id` IN (?)
+prisma:query COMMIT
+ PUT /api/surat-keluar/cmlrm4yyd0005sasd23ibaamp 200 in 43ms (compile: 6ms, render: 37ms)
+prisma:query SELECT `sintas`.`SuratKeluar`.`id`, `sintas`.`SuratKeluar`.`noSurat`, `sintas`.`SuratKeluar`.`tanggalSurat`, `sintas`.`SuratKeluar`.`tujuan`, `sintas`.`SuratKeluar`.`perihal`, `sintas`.`SuratKeluar`.`lampiran`, `sintas`.`SuratKeluar`.`sifat`, `sintas`.`SuratKeluar`.`status`, `sintas`.`SuratKeluar`.`keterangan`, `sintas`.`SuratKeluar`.`fileUrl`, `sintas`.`SuratKeluar`.`isiSurat`, `sintas`.`SuratKeluar`.`tempatTtd`, `sintas`.`SuratKeluar`.`jabatanTtd`, `sintas`.`SuratKeluar`.`namaTtd`, `sintas`.`SuratKeluar`.`nipTtd`, `sintas`.`SuratKeluar`.`tembusan`, `sintas`.`SuratKeluar`.`kategoriId`, `sintas`.`SuratKeluar`.`createdBy`, `sintas`.`SuratKeluar`.`createdAt`, `sintas`.`SuratKeluar`.`updatedAt` FROM `sintas`.`SuratKeluar` WHERE 1=1 ORDER BY `sintas`.`SuratKeluar`.`createdAt` DESC
+prisma:query SELECT `sintas`.`KategoriSurat`.`id`, `sintas`.`KategoriSurat`.`nama`, `sintas`.`KategoriSurat`.`kode`, `sintas`.`KategoriSurat`.`keterangan`, `sintas`.`KategoriSurat`.`createdAt`, `sintas`.`KategoriSurat`.`updatedAt` FROM `sintas`.`KategoriSurat` WHERE `sintas`.`KategoriSurat`.`id` IN (?)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE 1=1) AS `sub`
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE 1=1) AS `sub`
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratKeluar`.`id` FROM `sintas`.`SuratKeluar` WHERE `sintas`.`SuratKeluar`.`status` = ?) AS `sub`
+ GET /api/surat-keluar 200 in 35ms (compile: 3ms, render: 32ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`status` = ?) AS `sub`
+ GET /api/stats 200 in 138ms (compile: 7ms, render: 130ms)
+prisma:query SELECT 1
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`noSurat`, `sintas`.`SuratMasuk`.`tanggalSurat`, `sintas`.`SuratMasuk`.`tanggalTerima`, `sintas`.`SuratMasuk`.`pengirim`, `sintas`.`SuratMasuk`.`perihal`, `sintas`.`SuratMasuk`.`lampiran`, `sintas`.`SuratMasuk`.`sifat`, `sintas`.`SuratMasuk`.`status`, `sintas`.`SuratMasuk`.`keterangan`, `sintas`.`SuratMasuk`.`fileUrl`, `sintas`.`SuratMasuk`.`fileName`, `sintas`.`SuratMasuk`.`fileSize`, `sintas`.`SuratMasuk`.`fileType`, `sintas`.`SuratMasuk`.`kategoriId`, `sintas`.`SuratMasuk`.`createdAt`, `sintas`.`SuratMasuk`.`updatedAt` FROM `sintas`.`SuratMasuk` WHERE (`sintas`.`SuratMasuk`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`email`, `sintas`.`User`.`password`, `sintas`.`User`.`name`, `sintas`.`User`.`role`, `sintas`.`User`.`jabatan`, `sintas`.`User`.`nip`, `sintas`.`User`.`phone`, `sintas`.`User`.`avatar`, `sintas`.`User`.`isActive`, `sintas`.`User`.`createdAt`, `sintas`.`User`.`updatedAt` FROM `sintas`.`User` WHERE (`sintas`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query BEGIN
+prisma:query INSERT INTO `sintas`.`Disposisi` (`id`,`suratMasukId`,`dariUserId`,`keUserId`,`tujuan`,`instruksi`,`status`,`tenggatWaktu`,`catatan`,`prioritas`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+prisma:query SELECT `sintas`.`Disposisi`.`id`, `sintas`.`Disposisi`.`suratMasukId`, `sintas`.`Disposisi`.`dariUserId`, `sintas`.`Disposisi`.`keUserId`, `sintas`.`Disposisi`.`tujuan`, `sintas`.`Disposisi`.`instruksi`, `sintas`.`Disposisi`.`status`, `sintas`.`Disposisi`.`tenggatWaktu`, `sintas`.`Disposisi`.`catatan`, `sintas`.`Disposisi`.`prioritas`, `sintas`.`Disposisi`.`createdAt`, `sintas`.`Disposisi`.`updatedAt` FROM `sintas`.`Disposisi` WHERE `sintas`.`Disposisi`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`noSurat`, `sintas`.`SuratMasuk`.`tanggalSurat`, `sintas`.`SuratMasuk`.`tanggalTerima`, `sintas`.`SuratMasuk`.`pengirim`, `sintas`.`SuratMasuk`.`perihal`, `sintas`.`SuratMasuk`.`lampiran`, `sintas`.`SuratMasuk`.`sifat`, `sintas`.`SuratMasuk`.`status`, `sintas`.`SuratMasuk`.`keterangan`, `sintas`.`SuratMasuk`.`fileUrl`, `sintas`.`SuratMasuk`.`fileName`, `sintas`.`SuratMasuk`.`fileSize`, `sintas`.`SuratMasuk`.`fileType`, `sintas`.`SuratMasuk`.`kategoriId`, `sintas`.`SuratMasuk`.`createdAt`, `sintas`.`SuratMasuk`.`updatedAt` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`id` IN (?)
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`name`, `sintas`.`User`.`email`, `sintas`.`User`.`jabatan` FROM `sintas`.`User` WHERE `sintas`.`User`.`id` IN (?)
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query SELECT `sintas`.`SuratMasuk`.`id` FROM `sintas`.`SuratMasuk` WHERE (`sintas`.`SuratMasuk`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query UPDATE `sintas`.`SuratMasuk` SET `status` = ?, `updatedAt` = ? WHERE (`sintas`.`SuratMasuk`.`id` IN (?) AND (`sintas`.`SuratMasuk`.`id` = ? AND 1=1))
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`noSurat`, `sintas`.`SuratMasuk`.`tanggalSurat`, `sintas`.`SuratMasuk`.`tanggalTerima`, `sintas`.`SuratMasuk`.`pengirim`, `sintas`.`SuratMasuk`.`perihal`, `sintas`.`SuratMasuk`.`lampiran`, `sintas`.`SuratMasuk`.`sifat`, `sintas`.`SuratMasuk`.`status`, `sintas`.`SuratMasuk`.`keterangan`, `sintas`.`SuratMasuk`.`fileUrl`, `sintas`.`SuratMasuk`.`fileName`, `sintas`.`SuratMasuk`.`fileSize`, `sintas`.`SuratMasuk`.`fileType`, `sintas`.`SuratMasuk`.`kategoriId`, `sintas`.`SuratMasuk`.`createdAt`, `sintas`.`SuratMasuk`.`updatedAt` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`id` = ? LIMIT ? OFFSET ?
+prisma:query COMMIT
+ POST /api/disposisi 201 in 40ms (compile: 3ms, render: 37ms)
+prisma:query SELECT `sintas`.`Disposisi`.`id`, `sintas`.`Disposisi`.`suratMasukId`, `sintas`.`Disposisi`.`dariUserId`, `sintas`.`Disposisi`.`keUserId`, `sintas`.`Disposisi`.`tujuan`, `sintas`.`Disposisi`.`instruksi`, `sintas`.`Disposisi`.`status`, `sintas`.`Disposisi`.`tenggatWaktu`, `sintas`.`Disposisi`.`catatan`, `sintas`.`Disposisi`.`prioritas`, `sintas`.`Disposisi`.`createdAt`, `sintas`.`Disposisi`.`updatedAt` FROM `sintas`.`Disposisi` WHERE 1=1 ORDER BY `sintas`.`Disposisi`.`createdAt` DESC
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`noSurat`, `sintas`.`SuratMasuk`.`tanggalSurat`, `sintas`.`SuratMasuk`.`tanggalTerima`, `sintas`.`SuratMasuk`.`pengirim`, `sintas`.`SuratMasuk`.`perihal`, `sintas`.`SuratMasuk`.`lampiran`, `sintas`.`SuratMasuk`.`sifat`, `sintas`.`SuratMasuk`.`status`, `sintas`.`SuratMasuk`.`keterangan`, `sintas`.`SuratMasuk`.`fileUrl`, `sintas`.`SuratMasuk`.`fileName`, `sintas`.`SuratMasuk`.`fileSize`, `sintas`.`SuratMasuk`.`fileType`, `sintas`.`SuratMasuk`.`kategoriId`, `sintas`.`SuratMasuk`.`createdAt`, `sintas`.`SuratMasuk`.`updatedAt` FROM `sintas`.`SuratMasuk` WHERE `sintas`.`SuratMasuk`.`id` IN (?)
+prisma:query SELECT `sintas`.`User`.`id`, `sintas`.`User`.`name`, `sintas`.`User`.`email`, `sintas`.`User`.`jabatan` FROM `sintas`.`User` WHERE `sintas`.`User`.`id` IN (?)
+prisma:query SELECT `sintas`.`SuratMasuk`.`id`, `sintas`.`SuratMasuk`.`noSurat`, `sintas`.`SuratMasuk`.`tanggalSurat`, `sintas`.`SuratMasuk`.`tanggalTerima`, `sintas`.`SuratMasuk`.`pengirim`, `sintas`.`SuratMasuk`.`perihal`, `sintas`.`SuratMasuk`.`lampiran`, `sintas`.`SuratMasuk`.`sifat`, `sintas`.`SuratMasuk`.`status`, `sintas`.`SuratMasuk`.`keterangan`, `sintas`.`SuratMasuk`.`fileUrl`, `sintas`.`SuratMasuk`.`fileName`, `sintas`.`SuratMasuk`.`fileSize`, `sintas`.`SuratMasuk`.`fileType`, `sintas`.`SuratMasuk`.`kategoriId`, `sintas`.`SuratMasuk`.`createdAt`, `sintas`.`SuratMasuk`.`updatedAt` FROM `sintas`.`SuratMasuk` WHERE 1=1 ORDER BY `sintas`.`SuratMasuk`.`createdAt` DESC
+ GET /api/disposisi 200 in 15ms (compile: 3ms, render: 13ms)
+ GET /api/surat-masuk 200 in 101ms (compile: 5ms, render: 96ms)

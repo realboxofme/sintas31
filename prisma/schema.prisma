@@ -1,0 +1,151 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  password      String
+  name          String
+  role          String   @default("staff") // admin, kepala, staff
+  jabatan       String?
+  nip           String?
+  phone         String?
+  avatar        String?
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  disposisi     Disposisi[]
+  suratKeluar   SuratKeluar[]
+}
+
+model KategoriSurat {
+  id           String   @id @default(cuid())
+  nama         String
+  kode         String   @unique
+  keterangan   String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  suratMasuk   SuratMasuk[]
+  suratKeluar  SuratKeluar[]
+  templates    TemplateSurat[]
+}
+
+model SuratMasuk {
+  id             String   @id @default(cuid())
+  noSurat        String
+  tanggalSurat   DateTime
+  tanggalTerima  DateTime @default(now())
+  pengirim       String
+  perihal        String
+  lampiran       String?
+  sifat          String   @default("Biasa") // Biasa, Segera, Sangat Segera, Rahasia
+  status         String   @default("Baru")  // Baru, Diproses, Selesai, Diarsipkan
+  keterangan     String?
+  // File upload fields
+  fileUrl        String?
+  fileName       String?
+  fileSize       Int?
+  fileType       String?
+  kategoriId     String?
+  kategori       KategoriSurat? @relation(fields: [kategoriId], references: [id])
+  disposisi      Disposisi[]
+  arsip          Arsip?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model SuratKeluar {
+  id             String   @id @default(cuid())
+  noSurat        String
+  tanggalSurat   DateTime @default(now())
+  tujuan         String
+  perihal        String
+  lampiran       String?
+  sifat          String   @default("Biasa")
+  status         String   @default("Draft") // Draft, Dikirim, Diarsipkan
+  keterangan     String?
+  fileUrl        String?
+  isiSurat       String?  @db.Text  // HTML content from TinyMCE
+  // Tanda tangan fields
+  tempatTtd      String?  // Tempat terbit surat (e.g., "Jakarta")
+  jabatanTtd     String?  // Jabatan penandatangan (e.g., "Kepala Bagian Administrasi")
+  namaTtd        String?  // Nama penandatangan
+  nipTtd         String?  // NIP penandatangan
+  tembusan       String?  // Tembusan (e.g., "1. Sekretaris Jenderal\n2. Arsip")
+  kategoriId     String?
+  kategori       KategoriSurat? @relation(fields: [kategoriId], references: [id])
+  createdBy      String?
+  author         User?    @relation(fields: [createdBy], references: [id])
+  arsip          Arsip?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Disposisi {
+  id            String   @id @default(cuid())
+  suratMasukId  String
+  suratMasuk    SuratMasuk @relation(fields: [suratMasukId], references: [id], onDelete: Cascade)
+  dariUserId    String
+  dariUser      User     @relation(fields: [dariUserId], references: [id])
+  keUserId      String?  // User tujuan disposisi
+  tujuan        String   // Bisa user atau bagian/divisi
+  instruksi     String
+  status        String   @default("Belum Diproses") // Belum Diproses, Sedang Diproses, Selesai
+  tenggatWaktu  DateTime?
+  catatan       String?
+  prioritas     String   @default("Normal") // Rendah, Normal, Tinggi, Urgent
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Arsip {
+  id            String   @id @default(cuid())
+  noArsip       String   @unique
+  tanggalArsip  DateTime @default(now())
+  keterangan    String?
+  lokasi        String?  // Lokasi fisik arsip
+  jenis         String   // Masuk, Keluar
+  // File upload fields
+  fileUrl       String?
+  fileName      String?
+  fileSize      Int?
+  fileType      String?
+  suratMasukId  String?  @unique
+  suratKeluarId String?  @unique
+  suratMasuk    SuratMasuk?  @relation(fields: [suratMasukId], references: [id])
+  suratKeluar   SuratKeluar? @relation(fields: [suratKeluarId], references: [id])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model TemplateSurat {
+  id           String   @id @default(cuid())
+  nama         String
+  kode         String   @unique
+  konten       String   @db.Text// HTML content
+  kategoriId   String?
+  kategori     KategoriSurat? @relation(fields: [kategoriId], references: [id])
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model LogAktivitas {
+  id        String   @id @default(cuid())
+  userId    String?
+  aksi      String   // login, logout, create, update, delete
+  entitas   String   // SuratMasuk, SuratKeluar, User, dll
+  entitasId String?
+  detail    String?
+  ip        String?
+  createdAt DateTime @default(now())
+}
