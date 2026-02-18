@@ -8,7 +8,7 @@ generator client {
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  directUrl = env("DIRECT_DATABASE_URL")
 }
 
 model User {
@@ -62,6 +62,10 @@ model SuratMasuk {
   arsip          Arsip?
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+
+  @@index([kategoriId])
+  @@index([status])
+  @@index([tanggalSurat])
 }
 
 model SuratKeluar {
@@ -77,11 +81,11 @@ model SuratKeluar {
   fileUrl        String?
   isiSurat       String?  // HTML content from TinyMCE
   // Tanda tangan fields
-  tempatTtd      String?  // Tempat terbit surat (e.g., "Jakarta")
-  jabatanTtd     String?  // Jabatan penandatangan (e.g., "Kepala Bagian Administrasi")
-  namaTtd        String?  // Nama penandatangan
-  nipTtd         String?  // NIP penandatangan
-  tembusan       String?  // Tembusan (e.g., "1. Sekretaris Jenderal\n2. Arsip")
+  tempatTtd      String?
+  jabatanTtd     String?
+  namaTtd        String?
+  nipTtd         String?
+  tembusan       String?
   kategoriId     String?
   kategori       KategoriSurat? @relation(fields: [kategoriId], references: [id])
   createdBy      String?
@@ -89,6 +93,10 @@ model SuratKeluar {
   arsip          Arsip?
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+
+  @@index([kategoriId])
+  @@index([status])
+  @@index([createdBy])
 }
 
 model Disposisi {
@@ -106,6 +114,10 @@ model Disposisi {
   prioritas     String   @default("Normal") // Rendah, Normal, Tinggi, Urgent
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+
+  @@index([suratMasukId])
+  @@index([dariUserId])
+  @@index([status])
 }
 
 model Arsip {
@@ -117,15 +129,17 @@ model Arsip {
   jenis         String   // Masuk, Keluar
   // File upload fields
   fileUrl       String?
-  fileName      String?
-  fileSize      Int?
-  fileType      String?
+  fileName       String?
+  fileSize       Int?
+  fileType       String?
   suratMasukId  String?  @unique
   suratKeluarId String?  @unique
   suratMasuk    SuratMasuk?  @relation(fields: [suratMasukId], references: [id])
   suratKeluar   SuratKeluar? @relation(fields: [suratKeluarId], references: [id])
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+
+  @@index([jenis])
 }
 
 model TemplateSurat {
@@ -138,6 +152,8 @@ model TemplateSurat {
   isActive     Boolean  @default(true)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+
+  @@index([kategoriId])
 }
 
 model LogAktivitas {
@@ -149,4 +165,7 @@ model LogAktivitas {
   detail    String?
   ip        String?
   createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([aksi])
 }
