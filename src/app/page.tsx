@@ -1,5 +1,6 @@
 "use client";
 
+import { supabase } from "@/lib/supabaseClient";
 import { useState, useEffect, useCallback } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -725,9 +726,46 @@ export default function SINTASApp() {
       formData.append('file', file);
       formData.append('folder', folder);
 
-      const res = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData,
+      // ini yg di ganti
+      const handleFileUpload = async (
+  file: File,
+  folder: string
+): Promise<{ url: string; name: string; size: number; type: string } | null> => {
+
+  setUploading(true);
+
+  try {
+
+    const filePath = `${folder}/${Date.now()}-${file.name}`;
+
+    const { error } = await supabase.storage
+      .from("dokumen")
+      .upload(filePath, file);
+
+    if (error) {
+      toast.error(error.message);
+      return null;
+    }
+
+    const { data } = supabase.storage
+      .from("dokumen")
+      .getPublicUrl(filePath);
+
+    return {
+      url: data.publicUrl,
+      name: file.name,
+      size: file.size,
+      type: file.type,
+    };
+
+  } catch {
+    toast.error("Gagal upload file");
+    return null;
+  } finally {
+    setUploading(false);
+  }
+  };
+
       });
 
       if (res.ok) {
